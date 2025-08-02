@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Thakkali Meter™</title>
+  <title>TomatoFace™</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-    img { margin-top: 20px; max-width: 80%; border-radius: 12px; }
+    body {
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      background-color: #ff6347;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e64a2e;
+    }
+    .msg {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
-  <h1>🍅 Thakkali Meter™</h1>
-  <p>Upload your face and see how many tomatoes fit on it.</p>
-  
-  <form id="uploadForm">
-    <input type="file" name="image" accept="image/*" required><br><br>
-    <button type="submit">Estimate Tomatoes</button>
+  <h1>🍅 How Many Tomatoes Fit on Your Face?</h1>
+  <form method="POST" action="/value">
+    <button type="submit">Value Me</button>
   </form>
 
-  <div id="result"></div>
-
-  <script>
-    const form = document.getElementById('uploadForm');
-    form.onsubmit = async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const response = await fetch('/analyze', {
-        method: 'POST',
-        body: formData
-      });
-
-      const resultDiv = document.getElementById('result');
-      resultDiv.innerHTML = 'Analyzing...';
-
-      if (response.ok) {
-        const data = await response.json();
-        resultDiv.innerHTML = `
-          <h3>${data.count} tomatoes fit on your face!</h3>
-          <img src="${data.image_url}" alt="Result">
-        `;
-      } else {
-        resultDiv.innerHTML = 'Failed to analyze. Try again.';
-      }
-    };
-  </script>
+  {% if launched %}
+    <div class="msg">Opening webcam... Blink and raise your finger!</div>
+  {% endif %}
 </body>
 </html>
