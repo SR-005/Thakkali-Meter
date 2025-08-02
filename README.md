@@ -84,7 +84,7 @@ For Hardware:
 
 ### Project Demo
 # Video
-[[Add your demo video link here](https://drive.google.com/file/d/148Moukds5gQRBB6qCSX21xMoMGgD2FNt/view?usp=sharing)]
+[Demo](https://drive.google.com/file/d/148Moukds5gQRBB6qCSX21xMoMGgD2FNt/view?usp=sharing)
 How the Webapp works
 
 # Additional Demos
