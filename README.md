@@ -90,8 +90,8 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- Sreeram V Gopal: [Hand Tracking, Frontend and Backend]
-- [Aadith VS]: [Documentation, FaceTracking]
+- Sreeram V Gopal: Hand Tracking, Frontend and Backend
+- Aadith VS: Documentation, FaceTracking
 
 
 ---
