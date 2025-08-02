@@ -38,6 +38,10 @@ def estimate_tomatoes(image_path, tomato_path="tomato.png", tomato_radius = 20):
     cv2.fillConvexPoly(mask, hull, 255)
 
     x_min, y_min, face_width, face_height = cv2.boundingRect(hull)
+    # Expand bounding box vertically
+    padding_y = int(face_height * 0.2)  # Increase this value if needed
+    y_min = max(0, y_min - padding_y)
+    face_height = min(h - y_min, face_height + padding_y * 2)
     tomato_radius = int(min(face_width, face_height) / 4)
 
     # Load and resize tomato image
