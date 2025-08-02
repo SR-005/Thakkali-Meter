@@ -15,7 +15,8 @@ def overlay_image(bg, overlay, x, y):
                                alpha_bg * bg[y:y+h, x:x+w, c])
     return bg
 
-def estimate_tomatoes(image_path, tomato_path="tomato.png", tomato_radius=20):
+def estimate_tomatoes(image_path, tomato_path="tomato.png", tomato_radius = 20):
+
     mp_face_mesh = mp.solutions.face_mesh
     face_mesh = mp_face_mesh.FaceMesh(static_image_mode=True)
 
@@ -37,6 +38,7 @@ def estimate_tomatoes(image_path, tomato_path="tomato.png", tomato_radius=20):
     cv2.fillConvexPoly(mask, hull, 255)
 
     x_min, y_min, face_width, face_height = cv2.boundingRect(hull)
+    tomato_radius = int(min(face_width, face_height) / 4)
 
     # Load and resize tomato image
     tomato_img = cv2.imread(tomato_path, cv2.IMREAD_UNCHANGED)
