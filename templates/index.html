@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Thakkali Meter</title>
+    <meta charset="UTF-8">
+    <title>TomatoFace™</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 </head>
-<body style="text-align:center; padding:50px; font-family:sans-serif;">
+<body>
     <h1>TomatoFace™</h1>
-    <a href="/run_facemesh"><button>Value Me</button></a>
+    <a href="/run_facemesh"><button>🍅 Value Me</button></a>
 
     {% if show_image %}
         <h2>Here's how many tomatoes fit on your face:</h2>
-        <img src="{{ url_for('static', filename='tomato_face.jpg') }}" alt="Tomato Face" style="max-width:80%;">
+        <img src="{{ url_for('static', filename='tomato_face.jpg') }}" alt="Tomato Face">
     {% endif %}
 </body>
 </html>
