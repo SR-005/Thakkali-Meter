@@ -51,7 +51,8 @@ For Software:
 ](homepage)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Screenshot2](<img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/8fb8a5ac-67d5-4950-8ef0-eca9eb891447" />
+)
 *Add caption explaining what this shows*
 
 ![Screenshot3](Add screenshot 3 here with proper name)
