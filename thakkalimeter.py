@@ -63,7 +63,9 @@ def estimate_tomatoes(image_path, tomato_path="tomato.png", tomato_radius = 20):
     cv2.putText(image, f'{len(positions)} tomatoes fit!', (x_min, y_min - 10),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
 
-    cv2.imshow("Thakkali Meter", image)
+    output_path = "static/tomato_face.jpg"
+    cv2.imwrite(output_path, image)
+    #cv2.imshow("Thakkali Meter", image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 

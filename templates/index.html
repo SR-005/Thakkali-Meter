@@ -1,46 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TomatoFace™</title>
-  <style>
-    body {
-      background-color: #1e1e1e;
-      color: #f5f5f5;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 50px;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-    button {
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border: none;
-      background-color: #ff6347;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #e64a2e;
-    }
-    .msg {
-      margin-top: 20px;
-      font-size: 1.1em;
-      color: #ccc;
-    }
-  </style>
+    <title>Thakkali Meter</title>
 </head>
-<body>
-  <h1>🍅 How Many Tomatoes Fit on Your Face?</h1>
-  <form method="POST" action="/value">
-    <button type="submit">Value Me</button>
-  </form>
+<body style="text-align:center; padding:50px; font-family:sans-serif;">
+    <h1>TomatoFace™</h1>
+    <a href="/run_facemesh"><button>Value Me</button></a>
 
-  {% if launched %}
-    <div class="msg">Opening webcam... Blink and raise your finger!</div>
-  {% endif %}
+    {% if show_image %}
+        <h2>Here's how many tomatoes fit on your face:</h2>
+        <img src="{{ url_for('static', filename='tomato_face.jpg') }}" alt="Tomato Face" style="max-width:80%;">
+    {% endif %}
 </body>
 </html>

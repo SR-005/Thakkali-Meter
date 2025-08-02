@@ -1,16 +1,21 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, redirect, url_for
 import subprocess
+import os
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template('index.html', show_image=False)
 
-@app.route("/value", methods=["POST"])
-def value_me():
-    subprocess.Popen(["python", "facemesh.py"])
-    return render_template("index.html", launched=True)
+@app.route('/run_facemesh')
+def run_facemesh():
+    subprocess.run(["python", "facemesh.py"])
+    return redirect(url_for('show_result'))
 
-if __name__ == "__main__":
+@app.route('/thakkalimeter')
+def show_result():
+    return render_template('index.html', show_image=True)
+
+if __name__ == '__main__':
     app.run(debug=True)
