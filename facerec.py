@@ -6,6 +6,9 @@ feed.set(3,640)
 feed.set(4,480) 
 feed.set(10,100) 
 
+lefteye = [362, 385, 387, 263]  # Outer left eye
+righteye = [33, 160, 158, 133]  # Outer right eye
+
 #DEFAULT FORMALITY!!!!
 mphands=mp.solutions.hands
 hands=mphands.Hands()             
