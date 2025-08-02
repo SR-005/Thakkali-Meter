@@ -91,6 +91,8 @@ def generate_frames():
             if not photo_taken:
                 filename = "captured_face.jpg"
                 cv2.imwrite(filename, img)
+                feed.release()
+                cv2.destroyAllWindows()
                 count, face_box = estimate_tomatoes(filename)
                 print(f"🍅 Tomatoes on face: {count}")
                 overlay_tomatoes = True
@@ -104,19 +106,6 @@ def generate_frames():
                         tomato_positions.append((xi, yi))
 
                 photo_taken = True
-
-        # Overlay tomatoes
-        if overlay_tomatoes:
-            for (xi, yi) in tomato_positions:
-                if xi + 40 > img.shape[1] or yi + 40 > img.shape[0]:
-                    continue
-                roi = img[yi:yi+40, xi:xi+40]
-                alpha_s = tomato_img[:, :, 3] / 255.0
-                alpha_l = 1.0 - alpha_s
-                for c in range(3):
-                    roi[:, :, c] = (alpha_s * tomato_img[:, :, c] +
-                                    alpha_l * roi[:, :, c])
-                img[yi:yi+40, xi:xi+40] = roi
 
     # Display the frame
         cv2.imshow("TomatoFace™ - Blink & Raise Finger", img)
