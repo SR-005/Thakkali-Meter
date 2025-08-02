@@ -6,7 +6,7 @@ import time
 feed = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 feed.set(3, 640)
 feed.set(4, 480)
-feed.set(10, 170)
+feed.set(10, 200)
 
 lefteye = [362, 385, 387, 263]
 righteye = [33, 160, 158, 133]
@@ -30,6 +30,7 @@ facemesh = mp_face.FaceMesh(refine_landmarks=True)
 blink_display_time = 0
 blink_cooldown = 0
 index_detected = False
+photo_taken = False  # flag to avoid saving multiple photos on same blink
 
 while True:
     success, img = feed.read()
@@ -49,6 +50,8 @@ while True:
             mpdraw.draw_landmarks(img, hand_landmarks, mphands.HAND_CONNECTIONS)
 
     face_results = facemesh.process(imgrgb)
+    blinked = False
+
     if face_results.multi_face_landmarks:
         for face_landmarks in face_results.multi_face_landmarks:
 
@@ -65,16 +68,25 @@ while True:
                 if time.time() - blink_cooldown > 1:
                     blink_display_time = time.time()
                     blink_cooldown = time.time()
+                    blinked = True
+                    photo_taken = False  # allow photo again after new blink
 
     show_blink = time.time() - blink_display_time < 1
 
     if index_detected:
-        cv2.putText(img, "Hand Detected", (20, 40),
+        cv2.putText(img, "Index Detected", (20, 40),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 2)
 
     if index_detected and show_blink:
         cv2.putText(img, "BLINKED!", (20, 70),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 3)
+
+        if not photo_taken:
+            timestamp = int(time.time())
+            filename = f"snap_{timestamp}.jpg"
+            cv2.imwrite(filename, img)
+            print(f"Photo saved: {filename}")
+            photo_taken = True
 
     cv2.imshow("Blink + Index Detection", img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
