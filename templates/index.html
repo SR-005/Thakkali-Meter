@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TomatoFace™</title>
+    <title>Thakkali Meter™</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>TomatoFace™</h1>
-    <a href="/run_facemesh"><button>🍅 Value Me</button></a>
+    <h1>Thakkali Meter™</h1>
+    <p class="subtitle">Ever wondered how much tomato your face is worth?🍅</p>
+    
+    <a href="/run_facemesh"><button> Tomato Me </button></a>
 
     {% if show_image %}
-        <h2>Here's how many tomatoes fit on your face:</h2>
+        <h2>DAAAMNN!!</h2>
         <img src="{{ url_for('static', filename='tomato_face.jpg') }}" alt="Tomato Face">
+        <h3>You got {{ count }} tomatoes on your face!</h3>
+        <h2 lass="roast" style="font-style: italic;">{{ roast }}</h2>
     {% endif %}
 </body>
 </html>

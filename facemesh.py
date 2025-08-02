@@ -36,8 +36,6 @@ def generate_frames():
     blink_display_time = 0
     blink_cooldown = 0
     photo_taken = False
-    overlay_tomatoes = False
-    tomato_positions = []
 
     while True:
         success, img = feed.read()
@@ -84,38 +82,27 @@ def generate_frames():
             cv2.putText(img, "Index Detected", (20, 40),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 2)
 
-        if index_detected and show_blink:
+        if index_detected and show_blink and not photo_taken:
             cv2.putText(img, "BLINKED!", (20, 70),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 3)
 
-            if not photo_taken:
-                filename = "captured_face.jpg"
-                cv2.imwrite(filename, img)
-                feed.release()
-                cv2.destroyAllWindows()
-                count, face_box = estimate_tomatoes(filename)
-                print(f"🍅 Tomatoes on face: {count}")
-                overlay_tomatoes = True
-                tomato_positions = []
+            filename = "captured_face.jpg"
+            cv2.imwrite(filename, img)
+            feed.release()
+            cv2.destroyAllWindows()
 
-                if face_box:
-                    x, y, w_, h_ = face_box
-                    for i in range(count):
-                        xi = x + (i % 5) * 45
-                        yi = y + (i // 5) * 45
-                        tomato_positions.append((xi, yi))
+            count, face_box = estimate_tomatoes(filename)
+            print(f"🍅 Tomatoes on face: {count}")
+            return count  # 🟢 Return count immediately
 
-                photo_taken = True
-
-    # Display the frame
         cv2.imshow("TomatoFace™ - Blink & Raise Finger", img)
 
-        # Exit on pressing 'q'
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     feed.release()
     cv2.destroyAllWindows()
+    return 0  # Default if nothing captured
 
 if __name__ == "__main__":
     generate_frames()
