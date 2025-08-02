@@ -48,18 +48,14 @@ For Software:
 
 # Screenshots (Add at least 3)
 <img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/42cfa84b-1770-471b-8778-ccdd78c2adce" />
-(homepage)
-
-*Add caption explaining what this shows*
-
-![Screenshot1](<img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/8fb8a5ac-67d5-4950-8ef0-eca9eb891447" />
-)
 *Homepage*
 
-![Screenshot2](<img width="791" height="619" alt="Screenshot 2025-08-02 214237" src="https://github.com/user-attachments/assets/b6d1a012-495c-4852-aac1-9bc1a95cd56a" />)
+
+
+<img width="791" height="619" alt="Screenshot 2025-08-02 214237" src="https://github.com/user-attachments/assets/b6d1a012-495c-4852-aac1-9bc1a95cd56a" />
 *Image Capturing*
 
-![Screenshot3](<img width="1729" height="930" alt="Screenshot 2025-08-02 214413" src="https://github.com/user-attachments/assets/5bddc2ba-16b0-4821-ac86-8a24a00fd5a5" />)
+<img width="1729" height="930" alt="Screenshot 2025-08-02 214413" src="https://github.com/user-attachments/assets/5bddc2ba-16b0-4821-ac86-8a24a00fd5a5" />
 *Final*
 
 # Diagrams
