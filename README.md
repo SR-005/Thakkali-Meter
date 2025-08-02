@@ -47,8 +47,9 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![<img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/14fcc3de-86d4-4b5a-9857-14e983489db6" />
-](homepage)
+<img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/42cfa84b-1770-471b-8778-ccdd78c2adce" />
+(homepage)
+
 *Add caption explaining what this shows*
 
 ![Screenshot2](<img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/8fb8a5ac-67d5-4950-8ef0-eca9eb891447" />
