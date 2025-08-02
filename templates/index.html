@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thakkali Meter™</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    img { margin-top: 20px; max-width: 80%; border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <h1>🍅 Thakkali Meter™</h1>
+  <p>Upload your face and see how many tomatoes fit on it.</p>
+  
+  <form id="uploadForm">
+    <input type="file" name="image" accept="image/*" required><br><br>
+    <button type="submit">Estimate Tomatoes</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const response = await fetch('/analyze', {
+        method: 'POST',
+        body: formData
+      });
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = 'Analyzing...';
+
+      if (response.ok) {
+        const data = await response.json();
+        resultDiv.innerHTML = `
+          <h3>${data.count} tomatoes fit on your face!</h3>
+          <img src="${data.image_url}" alt="Result">
+        `;
+      } else {
+        resultDiv.innerHTML = 'Failed to analyze. Try again.';
+      }
+    };
+  </script>
+</body>
+</html>
