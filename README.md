@@ -33,16 +33,16 @@ For Software:
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+Deployment has FAILED (OUR BAD LUCK cause we realized late that mediapipe cant be deployed)
+
+COMMANDS:
+pip install requirments.txt
+run app.py
 
 # Run
-Deployment has FAILED (OUR BAD LUCK cause we realized late that mediapipe cant be deployed)
-So you can just:
-
-pip install requirments.txt
-and
-run app.py
+Click the Button the WebApp, when a Windw opens, keep you index finger on screen, it will automatically click the picture
 
 ### Project Documentation
 -
