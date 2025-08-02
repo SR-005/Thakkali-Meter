@@ -9,9 +9,9 @@
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Sreeram V Gopal - [AISAT]
+- Member 2: [Aadith VS] - [AISAT]
+
 
 ### Project Description
 [2-3 lines about what your project does]
@@ -47,14 +47,16 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+<img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/42cfa84b-1770-471b-8778-ccdd78c2adce" />
+*Homepage*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+
+<img width="791" height="619" alt="Screenshot 2025-08-02 214237" src="https://github.com/user-attachments/assets/b6d1a012-495c-4852-aac1-9bc1a95cd56a" />
+*Image Capturing*
+
+<img width="1729" height="930" alt="Screenshot 2025-08-02 214413" src="https://github.com/user-attachments/assets/5bddc2ba-16b0-4821-ac86-8a24a00fd5a5" />
+*Final*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -88,9 +90,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Sreeram V Gopal: Hand Tracking, Frontend and Backend
+- Aadith VS: Documentation, FaceTracking
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
