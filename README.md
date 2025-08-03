@@ -38,7 +38,7 @@ For Software:
 Deployment has FAILED (OUR BAD LUCK cause we realized late that mediapipe cant be deployed)
 
 COMMANDS:
-pip install requirments.txt
+pip install requirments.txt   
 run app.py
 
 # Run
