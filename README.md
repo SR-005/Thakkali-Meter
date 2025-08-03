@@ -5,7 +5,7 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: Data Droids
 
 
 ### Team Members
@@ -14,37 +14,38 @@
 
 
 ### Project Description
-[2-3 lines about what your project does]
+Thakkali Meter Clicks you photo at the worst moment(when you blink) and it tells how much "Thakkalis" can fit in our face
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Have you ever wondered how mch THAKKALI'S can you fit in your face
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+Well, dont try fitting em manually, we'll do that for you (GLADLY!!)
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Python
+- Flask
+- OpenCV and MediaPipe
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+Deployment has FAILED (OUR BAD LUCK cause we realized late that mediapipe cant be deployed)
+
+COMMANDS:
+pip install requirments.txt   
+run app.py
 
 # Run
-[commands]
+Click the Button the WebApp, when a Windw opens, keep you index finger on screen, it will automatically click the picture
 
 ### Project Documentation
-For Software:
+-
 
 # Screenshots (Add at least 3)
 <img width="1813" height="963" alt="Screenshot 2025-08-02 214205" src="https://github.com/user-attachments/assets/42cfa84b-1770-471b-8778-ccdd78c2adce" />
@@ -83,8 +84,8 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[Demo](https://drive.google.com/file/d/148Moukds5gQRBB6qCSX21xMoMGgD2FNt/view?usp=sharing)
+How the Webapp works
 
 # Additional Demos
 [Add any extra demo materials/links]
